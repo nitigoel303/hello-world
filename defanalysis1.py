@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 import os
 
 
-def Pareto_analysis(df,title,data=2):
+
+def Pareto_analysis(df,title,niti=12):
     df = df.sort_values(by='Count',ascending=False)
     df["cumpercentage"] = df["Count"].cumsum()/df["Count"].sum()*100
     fig, ax = plt.subplots()
@@ -31,6 +32,7 @@ def_count_type=df_input['Defect Type']
 def_count_type= pd.DataFrame(data=def_count_type)
 def_count_type.insert(loc=1,column='Count', value=1)
 out_def=def_count_type.groupby('Defect Type').count()
+out_def1 = out_def[out_def['Count'] > 20]
 out_def1 = out_def[out_def['Count'] > 20]
 Before_analysis=out_def1.sort_values(['Count'])
 	
