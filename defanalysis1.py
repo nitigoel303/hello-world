@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import os
 
 
-def Pareto_analysis(df,title):
+def Pareto_analysis(df,title,data=2):
     df = df.sort_values(by='Count',ascending=False)
     df["cumpercentage"] = df["Count"].cumsum()/df["Count"].sum()*100
     fig, ax = plt.subplots()
