@@ -6,7 +6,7 @@ import os
 
 def Pareto_analysis(df,title,niti=12):
     df = df.sort_values(by='Count',ascending=False)
-    df["cumpercentage"] = df["Count"].cumsum()/df["Count"].sum()*100
+    df["cumpercentage"] = df["Count"].cumsum()/df["Count"].sum()*10000
     fig, ax = plt.subplots()
     ax.bar(df.index, df["Count"], color='yellow')
     ax2 = ax.twinx()
