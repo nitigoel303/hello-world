@@ -40,7 +40,7 @@ Before_analysis=out_def1.sort_values(['Count'])
 
 def_type_analysis=df_input[['Defect Type','R&D Comments']]
 def_type_analysis= pd.DataFrame(data=def_type_analysis)
-def_type_analysis.insert(loc=1,column='Count', value=1)
+def_type_analysis.insert(loc=1,column='Count', value=100)
 	
 
 #pattern = ['Amended','Updated','SRN','Code Deployed','promoted','code deployed','changed','amended','updated']
