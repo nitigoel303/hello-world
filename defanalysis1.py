@@ -6,11 +6,7 @@ import os
 
 def Pareto_analysis(df,title,niti=12):
     df = df.sort_values(by='Count',ascending=False)
-    df["cumpercentage"] = df["Count"].cumsum()/df["Count"].sum()*1000
     fig, ax = plt.subplots()
-    ax.bar(df.index, df["Count"], color='yellow')
-    ax2 = ax.twinx()
-    ax2.plot(df.index, df["cumpercentage"], color="C1", marker="D", ms=7)
     ax.tick_params(axis="y", colors="C0")
     ax2.tick_params(axis="y", colors="C1")
     ax.set_xticklabels(df.index,fontsize=10, fontweight='bold', rotation=45, color='darkblue')
@@ -40,7 +36,7 @@ Before_analysis=out_def1.sort_values(['Count'])
 
 def_type_analysis=df_input[['Defect Type','R&D Comments']]
 def_type_analysis= pd.DataFrame(data=def_type_analysis)
-def_type_analysis.insert(loc=1,column='Count', value=23)
+def_type_analysis.insert(loc=1,column='Count', value=100)
 	
 
 #pattern = ['Amended','Updated','SRN','Code Deployed','promoted','code deployed','changed','amended','updated']
